@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'PT Serif', serif;
+color: white;
+}
+html,body{
+height: 100%;
+width: 100%;
+}
+body{background-image: url(../images/bg.png);
+background-color: #153448;
+}
+.flash{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 5px 10px;
+    border-radius: 0.5rem;
+    background-color:lightcoral;
+  }
+  .flash span{
+    display: inline-block;
+    margin: 1px 0;
+    color: whitesmoke;
+  }
+.profile-layer{
+    position: relative;
+    width: 75%;
+    background-color: #948979;
+    background-image: url(../images/create-bg.png);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.create-det{
+    padding: 10px;
+}
+.create-det a{
+    text-decoration: none;
+    color: #153448;
+}
+form{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+input{
+    width: 75%;
+    padding: 10px;
+    color: black;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+}
+.button{
+    width: 150px;
+    font-size: 16px;
+    background-image: url(../images/bg.png);
+    background-color:#153448;
+    color: white;
+}
+textarea{
+    color: black;
+    resize: none;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 10px;
+    width: 75%;
+}
+
+
+.file{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.file input{
+    max-width: 250px;
+}

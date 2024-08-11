@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/style-profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="image">
+        <a href="/landing"><img src="/images/BlogJob-logo.png" alt="" /></a>
+      </div>
+      <ul>
+        <li><a href="/landing">Home</a></li>
+        <li><a href="/explore">Explore</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+    <div class="profile-layer">
+      <section class="profile">
+        <div class="profile-item">
+          <div class="profbg">
+            <img src="/images/uploads/<%= user.bannerpic %>" alt="" />
+          </div>
+          <div class="profpic">
+            <img src="/images/uploads/<%= user.profilepic %>" alt="" />
+          </div>
+          <div class="profdet">
+            <h3><%=user.name %> 👋🏽</h3>
+            <h4>@<%=user.username %></h4>
+            <h5><%= user.bio %></h5>
+          </div>
+          <div class="profupd">
+            <a href="/profile/update">
+                <span class="material-symbols-outlined">
+                    checkbook
+                    </span>
+                <p>Edit</p></a>
+        </div>
+        </div>
+      </section>
+      <section class="user-posts">
+        <div class="posts">
+          <h3>Your Blogs</h3>
+          <div class="post-container">
+            <% user.posts.reverse().forEach(function(post){%>
+            <div class="post">
+              <h4><%=post.posttitle %></h4>
+              <h5>@<%=user.username %></h5>
+              <p><%= post.postdata %></p>
+              <div class="post-interaction">
+                <div class="like">
+                  <p><%= post.postlikes.length %></p>
+                    <a href="/Like/<%= post._id %>"
+                      ><span class="material-symbols-outlined">
+                        favorite
+                        </span></a
+                    ></div>
+                <a class="edit" href="/edit/<%= post._id %>"><span class="material-symbols-outlined">
+                  edit_note
+                  </span></a>
+                <a class="delete" href="/delete/<%=post._id %>"><span class="material-symbols-outlined">
+                  delete_sweep
+                  </span></a>
+              </div>
+            </div>
+            <%} )%>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="create">
+      <a href="/create"
+        ><span class="material-symbols-outlined"> edit_square </span></a
+      >
+    </div>
+  </body>
+</html>
