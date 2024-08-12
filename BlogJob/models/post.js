@@ -10,7 +10,7 @@ date:{
 },
 postintro:{
     type:String,
-    maxLength: 69,
+    maxLength: 70,
 },
 posttitle:String,
 postdata: String,

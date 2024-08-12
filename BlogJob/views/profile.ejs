@@ -50,24 +50,27 @@
           <div class="post-container">
             <% user.posts.reverse().forEach(function(post){%>
             <div class="post">
-              <h4><%=post.posttitle %></h4>
-              <h5>@<%=user.username %></h5>
-              <p><%= post.postdata %></p>
-              <div class="post-interaction">
-                <div class="like">
-                  <p><%= post.postlikes.length %></p>
-                    <a href="/Like/<%= post._id %>"
-                      ><span class="material-symbols-outlined">
-                        favorite
-                        </span></a
-                    ></div>
-                <a class="edit" href="/edit/<%= post._id %>"><span class="material-symbols-outlined">
-                  edit_note
-                  </span></a>
-                <a class="delete" href="/delete/<%=post._id %>"><span class="material-symbols-outlined">
-                  delete_sweep
-                  </span></a>
-              </div>
+              <div><h4><%=post.posttitle %></h4>
+                <h5>@<%=user.username %></h5>
+                <p><%= post.postdata %></p>
+                <div class="post-interaction">
+                  <div class="like">
+                    <p><%= post.postlikes.length %></p>
+                      <a href="/Like/<%= post._id %>"
+                        ><span class="material-symbols-outlined">
+                          favorite
+                          </span></a
+                      ></div>
+                  <a class="edit" href="/edit/<%= post._id %>"><span class="material-symbols-outlined">
+                    edit_note
+                    </span></a>
+                  <a class="delete" href="/delete/<%=post._id %>"><span class="material-symbols-outlined">
+                    delete_sweep
+                    </span></a>
+                </div></div>
+                <div class="post-image">
+                  
+                </div>
             </div>
             <%} )%>
           </div>

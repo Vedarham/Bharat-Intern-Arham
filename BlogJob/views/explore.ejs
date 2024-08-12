@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home||BlogJob</title>
+    <link rel="stylesheet" href="/style/style-home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+   </head>
+<body>
+    <nav>
+        <div class="image">
+            <a href="/landing"><img src="/images/BlogJob-logo.png" alt=""></a>
+        </div>
+        <ul>
+            <li><a href="/explore">Explore</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <section class="explore">
+        <% posts.reverse().forEach(function(post){%>
+        <div class="blog-cont">
+            <div class="blog">
+                <div class="sub-conts">
+                    <div class="sub-cont-1">
+                        <h3><%=post.posttitle %></h3>
+                    
+                </div>
+                <div class="sub-cont-2">
+                    <p><%=post.postintro %></p>
+                    <a href="">Read More</a>
+                </div>
+                </div>
+                <div class="blog-img">
+                    <img src="/images/uploads/<%= post.postpic %>" alt="">
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </section>
+</body>
+</html>

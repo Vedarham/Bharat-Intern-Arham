@@ -27,6 +27,7 @@ background-color: #EADBC8;
     margin: 1px 0;
     color: whitesmoke;
   }
+  /* Nav-bar */
 nav{
     position: fixed;
     height: 80px;
@@ -66,8 +67,9 @@ ul li a{
     font-size: 16px;
     text-decoration: none;
 }
+/* profile section */
 .profile-layer{
-    width: 70%;
+    width: 75%;
     position: relative;
     padding: 10px;
     top: 100px;
@@ -127,6 +129,7 @@ ul li a{
     font-size: 14px;
     color: black;
 }
+/* Update Profile */
 .profupd{
     position: absolute;
     top: 65%;
@@ -144,6 +147,7 @@ ul li a{
     color: #153448;
     font-size: 16px;
 }
+/* Blog Posts */
 .user-posts{
     padding: 10px;
     background-image: url(../images/back-bg.png);
@@ -203,6 +207,7 @@ p{
     color: goldenrod;
 }
 
+/* Create a post */
 .create{
     position: fixed;
     right: 5%;

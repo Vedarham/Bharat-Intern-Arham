@@ -70,7 +70,25 @@ textarea{
     width: 75%;
 }
 
-
+.edit-layer{
+    padding: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 75%;
+    background-color: #948979;
+    background-image: url(../images/create-bg.png);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.edit-layer a{
+    text-decoration: none;
+    color: #153448;
+}
+.edit-layer h3{
+    text-align: center;
+    font-size: 24px;
+}
 .file{
     width: 60%;
     display: flex;
