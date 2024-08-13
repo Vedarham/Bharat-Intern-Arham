@@ -62,3 +62,33 @@ TweenMax.staggerFrom(
         delay:2.2,
     },0.1
 )
+
+
+function wheelScrollAnimation (){
+    window.addEventListener("wheel",(e)=>{
+        if(e.deltaY>0){
+            gsap.to(".marque",{
+                transform:'translateX(-200%)',
+                duration:4,
+                repeat:-1,
+                ease:"none"
+            })
+            gsap.to(".marque span",{
+                rotate:0,
+            })
+        }
+        else{
+            gsap.to(".marque",{
+                transform:'translateX(0%)',
+                duration:4,
+                repeat:-1,
+                ease:"none"
+            })
+            gsap.to(".marque span",{
+                rotate:180,
+            })
+        }
+     })
+}
+
+wheelScrollAnimation()
