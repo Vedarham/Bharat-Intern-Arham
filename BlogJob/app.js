@@ -7,7 +7,7 @@ const jwt=require('jsonwebtoken')
 const userModel=require('./models/user.js')
 const postModel=require('./models/post.js')
 const upload =require("./utils/multer.js")
-const uploadOnCloudinary =require("./utils/cloudinary.js")
+// const uploadOnCloudinary =require("./utils/cloudinary.js")
 require('dotenv').config()
 
 app.set('view engine','ejs')
@@ -65,7 +65,7 @@ app.get('/login',(req,res)=>{
         res.render('landing')
     })
     app.get('/explore',isLoggedIn,async(req,res)=>{
-        let posts = await postModel.find()
+        let posts = await postModel.find().populate("user")
         res.render('explore',{posts})
     })
     // app.get('/profile/update',isLoggedIn,async(req,res)=>{
@@ -73,10 +73,13 @@ app.get('/login',(req,res)=>{
     //     res.render('profupdate',{user})
     // })
 
+    app.get('/post/:id',isLoggedIn,async(req,res)=>{
+       const post = await postModel.findById({_id:req.params.id}).populate("user")
+        res.render('post',{post})
+    })
+
 app.post('/update/:id',isLoggedIn,async (req,res)=>{
     const {posttitle,postdata} =req.body
-    // let users = await userModel.findOneAndUpdate({_id:req.params.userid},{name,email,imgurl},{new:true})
-        console.log(req.body.posttitle)
         let post= await postModel.findOneAndUpdate({id:req.params._id},
             {posttitle,postdata},{new:true})
         res.redirect('/profile')

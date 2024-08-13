@@ -25,11 +25,11 @@
                 <div class="sub-conts">
                     <div class="sub-cont-1">
                         <h3><%=post.posttitle %></h3>
-                    
+                        <a href="/post/profile">@<%= post.user.username %></a>
                 </div>
                 <div class="sub-cont-2">
                     <p><%=post.postintro %></p>
-                    <a href="">Read More</a>
+                    <a href="/post/<%=post._id%>">Read More</a>
                 </div>
                 </div>
                 <div class="blog-img">
